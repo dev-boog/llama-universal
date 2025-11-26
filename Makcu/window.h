@@ -12,5 +12,6 @@ namespace window
 	namespace LoadedFonts
 	{
 		extern ImFont* BoldTitleFont;
+		extern ImFont* WelcomeFont;
 	}
 }

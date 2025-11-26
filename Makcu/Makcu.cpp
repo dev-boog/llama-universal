@@ -9,7 +9,7 @@
 #include "window.h"
 
 // WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
-int main()
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
     try {
         makcu::Device device;
@@ -22,11 +22,7 @@ int main()
             return 1;
         }
 
-        MessageBox(NULL, "Makcu has been found and connected. Press OK to continue.", "llama-makcu-universal", MB_OK);
-        std::thread recoilThread([](makcu::Device& dev) {
-            recoil::Manager(dev);
-            }, std::ref(device));
-
+        std::thread recoilThread([](makcu::Device& dev) { recoil::Manager(dev); }, std::ref(device));
         recoilThread.detach();
 
         window::render();

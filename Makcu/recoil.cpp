@@ -98,7 +98,6 @@ void recoil::Manager(makcu::Device& device)
 
             AssignPattern(dx, dy, shot_count);
 
-
             // We don't want to cap the shot count when using basic X, Y slider values for movement.
             if (menu::toggles::selected_recoil_mode == 1)
             {

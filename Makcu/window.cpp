@@ -16,6 +16,7 @@ static LPDIRECT3DDEVICE9        g_pd3dDevice = NULL;
 static D3DPRESENT_PARAMETERS    g_d3dpp = {};
 
 ImFont* window::LoadedFonts::BoldTitleFont;
+ImFont* window::LoadedFonts::WelcomeFont;
 
 bool CreateDeviceD3D(HWND hWnd);
 void CleanupDeviceD3D();
@@ -133,6 +134,7 @@ void window::render()
 
     ImFont* font1 = io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\Arial.ttf", 12.0f);
     window::LoadedFonts::BoldTitleFont = io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\arialbd.ttf", 16.0f);
+    window::LoadedFonts::WelcomeFont = io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\arialbd.ttf", 20.0f);
 
 
     bool done = false;
